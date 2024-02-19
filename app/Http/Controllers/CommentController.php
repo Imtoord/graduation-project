@@ -70,6 +70,13 @@ class CommentController extends Controller
 
     public function deleteComment($id)
     {
+        // $comment = Comment::find($id);
+        // if ($comment) {
+        //     $comment->delete();
+        //     return response()->json(['message' => 'Comment deleted successfully'], 200);
+        // } else {
+        //     return response()->json(['error' => 'Comment not found'], 404);
+        // }
         try {
             $comment = Comment::findOrFail($id);
             $comment->delete();
